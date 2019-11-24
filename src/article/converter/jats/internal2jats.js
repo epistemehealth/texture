@@ -63,8 +63,12 @@ function _populateArticleMeta (jats, doc, jatsExporter) {
 
   // author-notes? // not supported yet
   const authnotesEl = $$('author-notes')
+  if (metadata.equalcontribution) {
   authnotesEl.append($$('fn').append(metadata.equalcontribution))
+  }
+  if (metadata.correspondence) {
   authnotesEl.append($$('corresp').append(metadata.correspondence).attr('id', 'cor1'))
+  }
   // do not export <author-notes> tag if there is no dates inside
   if (authnotesEl.getChildCount() > 0) {
     articleMeta.append(authnotesEl)
@@ -294,6 +298,13 @@ function _exportPerson ($$, exporter, node) {
       $$('xref').attr('ref-type', 'aff').attr('rid', affiliationId)
     )
   })
+  if (node.corresp) {
+    el.append(
+    $$('xref').append('*').attr({
+	'ref-type': 'corresp',
+	'rid': 'cor1'})
+  )
+  }
   node.funders.forEach(funderId => {
     el.append(
       $$('xref').attr('ref-type', 'award').attr('rid', funderId)

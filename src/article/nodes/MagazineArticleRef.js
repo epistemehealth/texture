@@ -21,6 +21,7 @@ import Reference from './Reference'
 export default class MagazineArticleRef extends Reference {}
 MagazineArticleRef.schema = {
   type: 'magazine-article-ref',
+  label: STRING,
   title: TEXT(...RICH_TEXT_ANNOS), // <article-title>
   authors: CHILDREN('ref-contrib'), // <person-group person-group-type="author">
   containerTitle: STRING, // <source>

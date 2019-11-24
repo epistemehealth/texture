@@ -21,6 +21,7 @@ import { CHILDREN, STRING, TEXT } from 'substance'
 export default class DataPublicationRef extends Reference {}
 DataPublicationRef.schema = {
   type: 'data-publication-ref', // publication-type="data"
+  label: STRING,
   title: TEXT(...RICH_TEXT_ANNOS), // <data-title>
   authors: CHILDREN('ref-contrib'), // <person-group person-group-type="author">
   containerTitle: STRING, // <source>

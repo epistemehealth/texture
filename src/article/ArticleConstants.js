@@ -49,8 +49,12 @@ export const LICENSES = [
     name: 'CC BY 4.0'
   },
   {
-    id: 'https://creativecommons.org/licenses/by-sa/2.0/',
-    name: 'CC BY-SA 2.0'
+    id: 'http://creativecommons.org/licenses/by-nc/4.0/',
+    name: 'CC BY-NC 4.0'
+  },
+  {
+    id: 'https://creativecommons.org/licenses/by-sa/4.0/',
+    name: 'CC BY-SA 4.0'
   }
 ]
 
@@ -86,20 +90,39 @@ export const JATS_GREEN_1_DTD = 'JATS-archivearticle1.dtd'
 export const JATS_GREEN_1_0_PUBLIC_ID = '-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.0 20120330//EN'
 export const JATS_GREEN_1_1_PUBLIC_ID = '-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN'
 export const JATS_GREEN_1_2_PUBLIC_ID = '-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.2 20190208//EN'
+export const JATS_BLUE_1_2_PUBLIC_ID = '-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.2 20190208//EN'
+export const JATS_BLUE_1_2_DTD = 'JATS-journalpublishing1.dtd'
 // NOTE: this DTD is used mainly internally so it is not so important how it looks like
 export const TEXTURE_JATS_PUBLIC_ID = '-//TEXTURE/DTD Texture JATS DTD v1.0'
 // TODO: we should maintain a DTD and bundle with texture or have it in the github repo
 export const TEXTURE_JATS_DTD = 'TextureJATS-1.0.dtd'
 
-const DEFAULT_JATS_SCHEMA_ID = JATS_GREEN_1_2_PUBLIC_ID
-const DEFAULT_JATS_DTD = JATS_GREEN_1_DTD
+const DEFAULT_JATS_SCHEMA_ID = JATS_BLUE_1_2_PUBLIC_ID
+const DEFAULT_JATS_DTD = JATS_BLUE_1_2_DTD
 export { DEFAULT_JATS_SCHEMA_ID, DEFAULT_JATS_DTD }
 
 // TODO: we need a way to specify which namespaces should be declared
 export const EMPTY_JATS = `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE article PUBLIC "${DEFAULT_JATS_SCHEMA_ID}" "${DEFAULT_JATS_DTD}">
-<article xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ali="http://www.niso.org/schemas/ali/1.0">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">Neuroanatomy and Behaviour</journal-id>
+      <journal-id journal-id-type="doi">10.35430/nab</journal-id>
+      <journal-title-group>
+        <journal-title>Neuroanatomy and Behaviour</journal-title>
+        <abbrev-journal-title abbrev-type="publisher">NAB</abbrev-journal-title>
+      </journal-title-group>
+      <issn publication-format="electronic">2652-1768</issn>
+      <publisher>
+        <publisher-name>Episteme Health Inc.</publisher-name>
+        <publisher-loc>
+          <city>Melbourne</city>
+          <state>Victoria</state>
+          <country>Australia</country>
+        </publisher-loc>
+      </publisher>
+    </journal-meta>
     <article-meta>
       <title-group>
         <article-title></article-title>

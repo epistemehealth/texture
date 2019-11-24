@@ -8,5 +8,5 @@ export default class Reference extends DocumentNode {
 }
 
 Reference.schema = {
-  type: 'reference'
+  type: 'reference',
 }

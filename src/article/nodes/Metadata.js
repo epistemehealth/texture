@@ -20,6 +20,7 @@ Metadata.schema = {
   lpage: STRING,
   pageRange: STRING,
   elocationId: STRING,
+  doi: STRING,
   acceptedDate: STRING,
   publishedDate: STRING,
   receivedDate: STRING,

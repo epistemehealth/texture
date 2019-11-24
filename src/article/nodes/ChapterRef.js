@@ -31,6 +31,7 @@ import { STRING, CHILDREN, TEXT } from 'substance'
 export default class ChapterRef extends Reference {}
 ChapterRef.schema = {
   type: 'chapter-ref',
+  label: STRING,
   title: TEXT(...RICH_TEXT_ANNOS), // <chapter-title>
   containerTitle: STRING, // <source>
   volume: STRING, // <volume>

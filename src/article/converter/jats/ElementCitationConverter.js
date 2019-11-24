@@ -25,6 +25,10 @@ export default class ElementCitationConverter {
 
   export (node, el, exporter) {
     el.tagName = 'ref'
+    const $$ = exporter.$$
+    el.append(
+      _createTextElement($$, node.label, 'label')
+    )
     el.append(
       _exportElementCitation(node, exporter)
     )
@@ -142,7 +146,7 @@ function _exportElementCitation (node, exporter) {
         $$('named-content').attr({ 'content-type': 'name' }).text(node.assignee)
       )
     )
-  }
+  } 
   el.append(_createTextElement($$, node.confName, 'conf-name'))
   el.append(_createTextElement($$, node.confLoc, 'conf-loc'))
   el.append(_createTextElement($$, node.day, 'day'))

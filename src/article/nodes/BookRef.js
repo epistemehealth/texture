@@ -21,6 +21,7 @@ import { RICH_TEXT_ANNOS } from './modelConstants'
 export default class BookRef extends Reference {}
 BookRef.schema = {
   type: 'book-ref',
+  label: STRING,
   authors: CHILDREN('ref-contrib'), // <person-group person-group-type="author">
   editors: CHILDREN('ref-contrib'), // <person-group person-group-type="editor">
   translators: CHILDREN('ref-contrib'), // <person-group person-group-type="translator">

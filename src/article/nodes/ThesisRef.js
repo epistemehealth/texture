@@ -19,6 +19,7 @@ import Reference from './Reference'
 export default class ThesisRef extends Reference {}
 ThesisRef.schema = {
   type: 'thesis-ref', // publication-type="thesis"
+  label: STRING,
   title: TEXT(...RICH_TEXT_ANNOS), // <article-title>
   authors: CHILDREN('ref-contrib'), // <person-group person-group-type="author">
   year: STRING, // <year>

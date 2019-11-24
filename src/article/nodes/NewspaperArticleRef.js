@@ -23,6 +23,7 @@ import Reference from './Reference'
 export default class NewspaperArticleRef extends Reference {}
 NewspaperArticleRef.schema = {
   type: 'newspaper-article-ref', // publication-type="newspaper"
+  label: STRING,
   title: TEXT(...RICH_TEXT_ANNOS), // <article-title>
   authors: CHILDREN('ref-contrib'), // <person-group person-group-type="author">
   containerTitle: STRING, // <source>

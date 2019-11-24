@@ -37,6 +37,10 @@ function _populateArticleMeta (jats, doc, jatsExporter) {
 
   // article-id*
   // TODO not supported yet
+  if (metadata.doi) {
+  articleMeta.append(
+      $$('article-id').append(metadata.doi).attr('pub-id-type', 'doi'))
+  }
 
   // article-categories?
   articleMeta.append(_exportSubjects(jats, doc))
@@ -260,13 +264,14 @@ function _groupContribs (contribs) {
 
 function _exportPerson ($$, exporter, node) {
   let el = $$('contrib').attr({
-    'id': node.id,
-    'contrib-type': 'person',
+/*    'id': node.id, */
+    'contrib-type': 'author',
     'equal-contrib': node.equalContrib ? 'yes' : 'no',
     'corresp': node.corresp ? 'yes' : 'no',
     'deceased': node.deceased ? 'yes' : 'no'
   })
   el.append(
+    _createTextElement($$, node.orcid, 'contrib-id', { 'contrib-id-type': 'orcid' }),
     $$('name').append(
       _createTextElement($$, node.surname, 'surname'),
       _createTextElement($$, node.givenNames, 'given-names'),
@@ -327,7 +332,7 @@ function _exportGroup ($$, exporter, node, groupMembers) {
     </contrib>
   */
   let contribEl = $$('contrib').attr({
-    'id': node.id,
+/*    'id': node.id, */
     'contrib-type': 'group',
     'equal-contrib': node.equalContrib ? 'yes' : 'no',
     'corresp': node.corresp ? 'yes' : 'no'
@@ -366,7 +371,7 @@ function _exportAffiliations (jats, doc) {
   let affiliations = doc.resolve(['metadata', 'affiliations'])
   let orgEls = affiliations.map(node => {
     let el = $$('aff').attr('id', node.id)
-    el.append(_createTextElement($$, node.institution, 'institution', { 'content-type': 'orgname' }))
+    el.append(_createTextElement($$, node.institution, 'institution')) /*
     el.append(_createTextElement($$, node.division1, 'institution', { 'content-type': 'orgdiv1' }))
     el.append(_createTextElement($$, node.division2, 'institution', { 'content-type': 'orgdiv2' }))
     el.append(_createTextElement($$, node.division3, 'institution', { 'content-type': 'orgdiv3' }))
@@ -379,7 +384,7 @@ function _exportAffiliations (jats, doc) {
     el.append(_createTextElement($$, node.phone, 'phone'))
     el.append(_createTextElement($$, node.fax, 'fax'))
     el.append(_createTextElement($$, node.email, 'email'))
-    el.append(_createTextElement($$, node.uri, 'uri', { 'content-type': 'link' }))
+    el.append(_createTextElement($$, node.uri, 'uri', { 'content-type': 'link' }))*/
     return el
   })
   return orgEls
@@ -502,7 +507,7 @@ function _exportKeywords (jats, doc, jatsExporter) {
     }
     groupEl.append(
       keywords.map(keyword => {
-        return $$('kwd').attr({ 'content-type': keyword.category }).append(
+        return $$('kwd').append(
           jatsExporter.annotatedText([keyword.id, 'name'])
         )
       })

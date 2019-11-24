@@ -62,6 +62,13 @@ function _populateArticleMeta (jats, doc, jatsExporter) {
   articleMeta.append(_exportAffiliations(jats, doc))
 
   // author-notes? // not supported yet
+  const authnotesEl = $$('author-notes')
+  authnotesEl.append($$('fn').append(metadata.equalcontribution))
+  authnotesEl.append($$('corresp').append(metadata.correspondence).attr('id', 'cor1'))
+  // do not export <author-notes> tag if there is no dates inside
+  if (authnotesEl.getChildCount() > 0) {
+    articleMeta.append(authnotesEl)
+  }
 
   // pub-date*,
   articleMeta.append(
@@ -371,7 +378,12 @@ function _exportAffiliations (jats, doc) {
   let affiliations = doc.resolve(['metadata', 'affiliations'])
   let orgEls = affiliations.map(node => {
     let el = $$('aff').attr('id', node.id)
-    el.append(_createTextElement($$, node.institution, 'institution')) /*
+    let instwrap = $$('institution-wrap')
+    instwrap.append(_createTextElement($$, node.ISNI, 'institution-id', { 'institution-id-type': 'ISNI' })) 
+    instwrap.append(_createTextElement($$, node.institution, 'institution')) 
+    el.append(instwrap)
+
+/*
     el.append(_createTextElement($$, node.division1, 'institution', { 'content-type': 'orgdiv1' }))
     el.append(_createTextElement($$, node.division2, 'institution', { 'content-type': 'orgdiv2' }))
     el.append(_createTextElement($$, node.division3, 'institution', { 'content-type': 'orgdiv3' }))
@@ -385,6 +397,7 @@ function _exportAffiliations (jats, doc) {
     el.append(_createTextElement($$, node.fax, 'fax'))
     el.append(_createTextElement($$, node.email, 'email'))
     el.append(_createTextElement($$, node.uri, 'uri', { 'content-type': 'link' }))*/
+
     return el
   })
   return orgEls

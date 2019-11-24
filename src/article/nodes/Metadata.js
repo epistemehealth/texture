@@ -26,5 +26,7 @@ Metadata.schema = {
   receivedDate: STRING,
   revReceivedDate: STRING,
   revRequestedDate: STRING,
-  permission: CHILD('permission')
+  permission: CHILD('permission'),
+  equalcontribution: STRING,
+  correspondence: STRING
 }

@@ -27,19 +27,20 @@ export default class Affiliation extends DocumentNode {
 
 Affiliation.schema = {
   type: 'affiliation',
-  institution: STRING,
-  division1: STRING,
-  division2: STRING,
-  division3: STRING,
+  ISNI: STRING,
+  institution: STRING
+//  division1: STRING,
+//  division2: STRING,
+//  division3: STRING,
   // Consider switching to address-line1,2,3
-  street: STRING,
-  addressComplements: STRING,
-  city: STRING,
-  state: STRING,
-  postalCode: STRING,
-  country: STRING,
-  phone: STRING,
-  fax: STRING,
-  email: STRING,
-  uri: STRING
+//  street: STRING,
+//  addressComplements: STRING,
+//  city: STRING,
+//  state: STRING,
+//  postalCode: STRING,
+//  country: STRING,
+//  phone: STRING,
+//  fax: STRING,
+//  email: STRING,
+//  uri: STRING
 }

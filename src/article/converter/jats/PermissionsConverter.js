@@ -32,10 +32,6 @@ export default class PermissionsConverter {
     let $$ = exporter.$$
     if (node.copyrightStatement) {
       el.append($$('copyright-statement').append(node.copyrightStatement))
-    } else if (node.license.includes('by/4.0')) {
-      el.append($$('copyright-statement').append('Except where otherwise noted, the content of this article is licensed under Creative Commons Attribution 4.0 International License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.'))
-    } else if (node.license.includes('by-nc')) {
-      el.append($$('copyright-statement').append('Except where otherwise noted, the content of this article is licensed under Creative Commons Attribution-NonCommercial 4.0 International License. In addition to this license, reuse of a reasonable portion of the work for fair dealing purposes under Australian copyright law, such as medical research, education, scholarship, or not-for-profit or charitable purposes, is also permitted. For additional permissions, please contact the corresponding author.'))
     }
     if (node.copyrightYear) {
       el.append($$('copyright-year').append(node.copyrightYear))
@@ -50,9 +46,7 @@ export default class PermissionsConverter {
     if (node.license || node.licenseText) {
       let licenseEl = $$('license')
       if (node.license) {
-        licenseEl.append(
-          $$('ali:license_ref').append(node.license)
-        )
+        licenseEl.attr( 'xlink:href', node.license ).attr( 'xlink:type', 'simple' )
       }
       if (node.licenseText) {
         licenseEl.append(
@@ -60,7 +54,11 @@ export default class PermissionsConverter {
             exporter.annotatedText([node.id, 'licenseText'])
           )
         )
-      }
+      } else if (node.license.includes('by/4.0')) {
+      licenseEl.append($$('license-p').append('Except where otherwise noted, the content of this article is licensed under Creative Commons Attribution 4.0 International License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.'))
+    } else if (node.license.includes('by-nc')) {
+      licenseEl.append($$('license-p').append('Except where otherwise noted, the content of this article is licensed under Creative Commons Attribution-NonCommercial 4.0 International License. In addition to this license, reuse of a reasonable portion of the work for fair dealing purposes under Australian copyright law, such as medical research, education, scholarship, or not-for-profit or charitable purposes, is also permitted. For additional permissions, please contact the corresponding author.'))
+    }
       el.append(licenseEl)
     }
   }

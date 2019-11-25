@@ -16,6 +16,7 @@ export default {
     config.addLabel('select-default-value', 'No value selected')
 
     // item types
+    config.addLabel('label', 'Reference Number')
     config.addLabel('journal-article-ref', 'Journal Article')
     config.addLabel('edit-journal-article-ref', 'Edit Journal Article')
     config.addLabel('add-journal-article-ref', 'Add Journal Article')
@@ -125,12 +126,15 @@ export default {
     config.addLabel('revReceivedDate', 'Revision Received Date')
     config.addLabel('revRequestedDate', 'Revision Requested Date')
 
+    config.addLabel('equalcontribution', 'Equal Contributor Note')
+    config.addLabel('correspondence', 'Corresponding Author Note')
+
     // person labels
     config.addLabel('person', 'Person')
     config.addLabel('add-person', 'Add Person')
     config.addLabel('edit-person', 'Edit Person')
     config.addLabel('create-person', 'Create Person')
-    config.addLabel('orcid', 'ORCID')
+    config.addLabel('orcid', 'ORCID URL')
     config.addLabel('givenNames', 'Given Names')
     config.addLabel('surname', 'Surname')
     config.addLabel('alias', 'Alias')

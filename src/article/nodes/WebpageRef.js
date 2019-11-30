@@ -22,7 +22,6 @@ import Reference from './Reference'
 export default class WebpageRef extends Reference {}
 WebpageRef.schema = {
   type: 'webpage-ref', // publication-type="webpage"
-  label: STRING,
   title: TEXT(...RICH_TEXT_ANNOS), // <article-title>
   // E.g. website name, where the page appeared
   containerTitle: STRING, // <source>

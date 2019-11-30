@@ -86,6 +86,7 @@ export default {
     config.addLabel('accessionId', 'Accession ID')
     config.addLabel('archiveId', 'Archive ID')
     config.addLabel('arkId', 'ARK ID')
+    config.addLabel('articletype', 'Article Type')
     config.addLabel('assignee', 'Assignee')
     config.addLabel('confLoc', 'Conference Location')
     config.addLabel('confName', 'Conference Name')

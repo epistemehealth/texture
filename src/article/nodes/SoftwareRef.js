@@ -26,7 +26,6 @@ import Reference from './Reference'
 export default class SoftwareRef extends Reference {}
 SoftwareRef.schema = {
   type: 'software-ref', // publication-type="software"
-  label: STRING,
   title: TEXT(...RICH_TEXT_ANNOS), // <source>
   authors: CHILDREN('ref-contrib'), // <person-group person-group-type="author">
   version: STRING, // <version>

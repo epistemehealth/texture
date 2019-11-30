@@ -4,7 +4,6 @@ import { RICH_TEXT_ANNOS } from './modelConstants'
 export default class Metadata extends DocumentNode {}
 Metadata.schema = {
   type: 'metadata',
-  articleType: STRING,
   authors: CHILDREN('person'),
   editors: CHILDREN('person'),
   groups: CHILDREN('group'),
@@ -13,6 +12,7 @@ Metadata.schema = {
   // TODO: this might change in a similar way as we gonna approach Figure metadata, where there can be multiple fields with multiple values
   keywords: CHILDREN('keyword'),
   subjects: CHILDREN('subject'),
+  articletype: STRING,
   volume: STRING,
   issue: STRING,
   issueTitle: TEXT(...RICH_TEXT_ANNOS),

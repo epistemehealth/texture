@@ -70,7 +70,7 @@ export default class SectionContainerConverter {
         while (stack.length >= level + 1) {
           stack.pop()
         }
-        let sec = $$('sec').attr({ id: heading.id })
+        let sec = $$('sec') //.attr({ id: heading.id })
         let title = $$('title')
         title.append(exporter.annotatedText(heading.getPath()))
         sec.appendChild(title)

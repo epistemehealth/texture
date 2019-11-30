@@ -24,6 +24,7 @@ export default {
   'magazine-article-ref.authors': { required: true },
   'magazine-article-ref.containerTitle': { required: true },
   'magazine-article-ref.title': { required: true },
+  'metadata.articletype': { required: true },
   'metadata.volume': { required: true },
   'metadata.elocationId': { required: true },
   'metadata.doi': { required: true },

@@ -1,5 +1,6 @@
 export { default as AbstractComponent } from './AbstractComponent'
 export { default as AddSupplementaryFileWorkflow } from './AddSupplementaryFileWorkflow'
+export { default as ArticleTypesEditor } from './ArticleTypesEditor'
 export { default as AuthorsListComponent } from './AuthorsListComponent'
 export { default as BlockFormulaComponent } from './BlockFormulaComponent'
 export { default as BlockQuoteComponent } from './BlockQuoteComponent'

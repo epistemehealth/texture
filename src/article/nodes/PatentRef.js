@@ -21,7 +21,6 @@ import Reference from './Reference'
 export default class PatentRef extends Reference {}
 PatentRef.schema = {
   type: 'patent-ref', // publication-type="patent"
-  label: STRING,
   inventors: CHILDREN('ref-contrib'), // <person-group person-group-type="inventor">
   assignee: STRING, // <collab collab-type="assignee"><named-content>
   title: TEXT(...RICH_TEXT_ANNOS), // <article-title>

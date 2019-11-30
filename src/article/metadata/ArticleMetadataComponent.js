@@ -1,6 +1,7 @@
 import { createNodePropertyModels, createValueModel } from '../../kit'
 import DefaultNodeComponent from '../components/DefaultNodeComponent'
 import LicenseEditor from '../components/LicenseEditor'
+import ArticleTypesEditor from '../components/ArticleTypesEditor'
 
 export default class ArticleMetadataComponent extends DefaultNodeComponent {
   _getClassNames () {
@@ -15,6 +16,9 @@ export default class ArticleMetadataComponent extends DefaultNodeComponent {
     switch (name) {
       case 'license': {
         return LicenseEditor
+      }
+      case 'articletype': {
+        return ArticleTypesEditor
       }
       default:
         return super._getPropertyEditorClass(name, value)

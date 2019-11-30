@@ -20,8 +20,8 @@ function _populateMeta (jats, doc, jatsExporter) {
   // @article-type
   let articleEl = jats.find('article')
   let metadata = doc.get('metadata')
-  if (metadata.articleType) {
-    articleEl.attr('article-type', metadata.articleType)
+  if (metadata.articletype) {
+    articleEl.attr('article-type', metadata.articletype)
   }
 
   _populateArticleMeta(jats, doc, jatsExporter)
@@ -41,6 +41,15 @@ function _populateArticleMeta (jats, doc, jatsExporter) {
   articleMeta.append(
       $$('article-id').append(metadata.doi).attr('pub-id-type', 'doi'))
   }
+
+  //article version is VoR
+  articleMeta.append(
+      $$('article-version').append('Version of Record').attr({
+    'article-version-type': 'VoR',
+    'vocab': 'JAV',
+    'vocab-identifier': 'http://www.niso.org/publications/rp/RP-8-2008.pdf',
+    'vocab-term': 'version-of-record'
+  }))
 
   // article-categories?
   articleMeta.append(_exportSubjects(jats, doc))

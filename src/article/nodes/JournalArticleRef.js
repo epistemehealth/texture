@@ -25,7 +25,6 @@ import { RICH_TEXT_ANNOS } from './modelConstants'
 export default class JournalArticleRef extends Reference {}
 JournalArticleRef.schema = {
   type: 'journal-article-ref', // publication-type="journal"
-  label: STRING,
   title: TEXT(...RICH_TEXT_ANNOS), // <article-title>
   authors: CHILDREN('ref-contrib'), // <person-group person-group-type="author">
   editors: CHILDREN('ref-contrib'), // <person-group person-group-type="editor">

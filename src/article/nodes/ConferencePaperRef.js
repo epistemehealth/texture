@@ -19,7 +19,6 @@ import Reference from './Reference'
 export default class ConferencePaperRef extends Reference {}
 ConferencePaperRef.schema = {
   type: 'conference-paper-ref', // publication-type="confproc"
-  label: STRING,
   title: TEXT(...RICH_TEXT_ANNOS), // <article-title>
   authors: CHILDREN('ref-contrib'), // <person-group person-group-type="author">
   confName: STRING, // <conf-name>

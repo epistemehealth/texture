@@ -58,6 +58,61 @@ export const LICENSES = [
   }
 ]
 
+export const ARTICLE_TYPES = [
+  {
+    id: 'research-article',
+    name: 'Research Article'
+  },
+  {
+    id: 'review-article',
+    name: 'Review Article'
+  },
+  {
+    id: 'editorial',
+    name: 'Editorial, opinion, general commentary'
+  },
+  {
+    id: 'rapid-communication',
+    name: 'Rapid Communication'
+  },
+  {
+    id: 'article-commentary',
+    name: 'Commentary on Specific Articles'
+  },
+  {
+    id: 'discussion',
+    name: 'Invited Discussion'
+  },
+  {
+    id: 'letter',
+    name: 'Letter'
+  },
+  {
+    id: 'reply',
+    name: 'Reply'
+  },
+  {
+    id: 'addendum',
+    name: 'Addendum'
+  },
+  {
+    id: 'editorial',
+    name: 'Editorial, opinion, general commentary'
+  },
+  {
+    id: 'correction',
+    name: 'Correction'
+  },
+  {
+    id: 'partial-retraction',
+    name: 'Partial Retraction'
+  },
+  {
+    id: 'retraction',
+    name: 'Retraction'
+  }
+]
+
 export const CARD_MINIMUM_FIELDS = 3
 
 // These are intended to be used for labels (lists, references, etc.)
@@ -104,7 +159,7 @@ export { DEFAULT_JATS_SCHEMA_ID, DEFAULT_JATS_DTD }
 // TODO: we need a way to specify which namespaces should be declared
 export const EMPTY_JATS = `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE article PUBLIC "${DEFAULT_JATS_SCHEMA_ID}" "${DEFAULT_JATS_DTD}">
-<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<article dtd-version="1.2" xml:lang="en" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <front>
     <journal-meta>
       <journal-id journal-id-type="publisher-id">Neuroanatomy and Behaviour</journal-id>

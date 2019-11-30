@@ -18,7 +18,6 @@ import { STRING, CHILDREN } from 'substance'
 export default class ArticleRef extends Reference {}
 ArticleRef.schema = {
   type: 'article-ref', // publication-type="article"
-  label: STRING,
   title: STRING, // <article-title>
   authors: CHILDREN('ref-contrib'), // <person-group person-group-type="author">
   editors: CHILDREN('ref-contrib'), // <person-group person-group-type="editor">

@@ -3,6 +3,7 @@ import {
   INTERNAL_BIBR_TYPES_TO_JATS,
   BOOK_REF, REPORT_REF, SOFTWARE_REF, DATA_PUBLICATION_REF, CHAPTER_REF
 } from '../../ArticleConstants'
+import { getPos } from '../../shared/nodeHelpers'
 
 import { getText, getSeparatedText, getAttr } from '../util/domHelpers'
 
@@ -26,8 +27,9 @@ export default class ElementCitationConverter {
   export (node, el, exporter) {
     el.tagName = 'ref'
     const $$ = exporter.$$
+    let label = getPos(node)
     el.append(
-      _createTextElement($$, node.label, 'label')
+      _createTextElement($$, label, 'label')
     )
     el.append(
       _exportElementCitation(node, exporter)

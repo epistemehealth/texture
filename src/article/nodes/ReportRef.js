@@ -24,7 +24,6 @@ import Reference from './Reference'
 export default class ReportRef extends Reference {}
 ReportRef.schema = {
   type: 'report-ref', // publication-type="report"
-  label: STRING,
   authors: CHILDREN('ref-contrib'), // <person-group person-group-type="author">
   sponsors: CHILDREN('ref-contrib'), // <person-group person-group-type="sponsor">
   title: TEXT(...RICH_TEXT_ANNOS), // <source>

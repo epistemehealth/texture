@@ -128,7 +128,7 @@ export default {
     config.addLabel('revRequestedDate', 'Revision Requested Date')
 
     config.addLabel('equalcontribution', 'Equal Contributor Note')
-    config.addLabel('correspondence', 'Corresponding Author Note')
+    config.addLabel('correspondence', 'Corresponding Author Email')
 
     // person labels
     config.addLabel('person', 'Person')

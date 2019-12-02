@@ -76,7 +76,7 @@ function _populateArticleMeta (jats, doc, jatsExporter) {
   authnotesEl.append($$('fn').append(metadata.equalcontribution))
   }
   if (metadata.correspondence) {
-  authnotesEl.append($$('corresp').append(metadata.correspondence).attr('id', 'cor1'))
+  authnotesEl.append($$('corresp').text("* ").append(_createTextElement($$, metadata.correspondence, 'email')).attr('id', 'cor1'))
   }
   // do not export <author-notes> tag if there is no dates inside
   if (authnotesEl.getChildCount() > 0) {

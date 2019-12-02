@@ -21,6 +21,7 @@ export default class FootnoteConverter {
     // or they are generated without persisting operations (e.g. think about undo/redo, or collab)
     // my suggestion would be to introduce volatile ops, they would be excluded from the DocumentChange, that is stored in the change history,
     // or used for collaborative editing.
+    el.attr('id', node.id)
     let label = getLabel(node)
     if (label) {
       el.append(

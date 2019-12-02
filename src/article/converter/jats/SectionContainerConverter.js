@@ -22,7 +22,7 @@ export default class SectionContainerConverter {
     // Note: mapping the section id
     // TODO: what about other attributes?
     h.attr({
-      id: sec.attr('id'),
+    id: sec.attr('id'),
       level
     })
     // ATTENTION: <sec-meta> is not supported

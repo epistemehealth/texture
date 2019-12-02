@@ -31,7 +31,7 @@ export default class BlockFormulaConverter {
     let $$ = exporter.$$
 
     // Note: ATM only math/tex is supported and thus hard-coded here
-    el.attr('content-type', 'math/tex')
+    el.attr({'id': node.id, 'content-type': 'math/tex'})
 
     let label = getLabel(node)
     if (label) {

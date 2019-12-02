@@ -75,6 +75,7 @@ export default class FigurePanelConverter {
 
   export (node, el, exporter) {
     let $$ = exporter.$$
+    el.attr( 'id', node.id )
     // ATTENTION: this helper retrieves the label from the state
     let label = getLabel(node)
     if (label) {

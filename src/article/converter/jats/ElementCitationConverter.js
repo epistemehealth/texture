@@ -26,6 +26,7 @@ export default class ElementCitationConverter {
 
   export (node, el, exporter) {
     el.tagName = 'ref'
+    el.attr('id', node.id)
     const $$ = exporter.$$
     let label = getPos(node)
     el.append(

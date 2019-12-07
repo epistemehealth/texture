@@ -159,7 +159,7 @@ export { DEFAULT_JATS_SCHEMA_ID, DEFAULT_JATS_DTD }
 // TODO: we need a way to specify which namespaces should be declared
 export const EMPTY_JATS = `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE article PUBLIC "${DEFAULT_JATS_SCHEMA_ID}" "${DEFAULT_JATS_DTD}">
-<article dtd-version="1.2" xml:lang="en" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<article>
   <front>
     <journal-meta>
       <journal-id journal-id-type="publisher-id">Neuroanatomy and Behaviour</journal-id>

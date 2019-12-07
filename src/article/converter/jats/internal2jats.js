@@ -21,7 +21,22 @@ function _populateMeta (jats, doc, jatsExporter) {
   let articleEl = jats.find('article')
   let metadata = doc.get('metadata')
   if (metadata.articletype) {
-    articleEl.attr('article-type', metadata.articletype)
+    articleEl.attr({
+    'article-type': metadata.articletype,
+    'dtd-version': '1.2',
+    'xml:lang': 'en',
+    'xmlns:mml': 'http://www.w3.org/1998/Math/MathML',
+    'xmlns:xlink': 'http://www.w3.org/1999/xlink',
+    'xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance'
+  })
+  } else {
+    articleEl.attr({
+    'dtd-version': '1.2',
+    'xml:lang': 'en',
+    'xmlns:mml': 'http://www.w3.org/1998/Math/MathML',
+    'xmlns:xlink': 'http://www.w3.org/1999/xlink',
+    'xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance'
+  })
   }
 
   _populateArticleMeta(jats, doc, jatsExporter)

@@ -11,9 +11,15 @@ export default class XrefConverter {
   }
 
   export (node, el, exporter) {
+    el.removeAttribute('id')
     el.attr('ref-type', node.refType)
-    el.attr('rid', node.refTargets.join(' '))
     let label = getLabel(node)
+    if (node.refType == 'bibr') {
+      let targs = label.split(/\D+/).filter(function checknum(label){return label > 0})
+      el.attr('rid', 'ref' + targs[0])
+    } else {
+      el.attr('rid', node.refTargets[0])
+    }
     if (label) {
       el.text(label)
     }

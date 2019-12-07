@@ -66,14 +66,14 @@ export default class TableConverter {
 
   export (table, el, exporter) {
     const $$ = exporter.$$
-    let htmlTable = $$('table').attr('id', table.id)
+    let htmlTable = $$('table')//.attr('id', table.id)
     let tbody = $$('tbody')
     let rows = table.resolve('rows')
     let matrix = table.getCellMatrix()
     for (let i = 0; i < rows.length; i++) {
       let row = rows[i]
       let cells = matrix[i]
-      let tr = $$('tr').attr('id', row.id)
+      let tr = $$('tr')//.attr('id', row.id)
       for (let j = 0; j < cells.length; j++) {
         let cell = cells[j]
         if (cell.shadowed) continue
@@ -92,6 +92,7 @@ export default class TableConverter {
           }
         }
         el.attr(attributes)
+        el.removeAttribute('id')
         el.append(exporter.annotatedText(cell.getPath()))
         tr.append(el)
       }

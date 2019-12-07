@@ -32,6 +32,8 @@ export default class PermissionsConverter {
     let $$ = exporter.$$
     if (node.copyrightStatement) {
       el.append($$('copyright-statement').append(node.copyrightStatement))
+    } else {
+      el.append($$('copyright-statement').append('Copyright © ' + new Date().getFullYear() + ' The Author(s)'))
     }
     if (node.copyrightYear) {
       el.append($$('copyright-year').append(node.copyrightYear))
@@ -46,7 +48,7 @@ export default class PermissionsConverter {
     if (node.license || node.licenseText) {
       let licenseEl = $$('license')
       if (node.license) {
-        licenseEl.attr( 'xlink:href', node.license ).attr( 'xlink:type', 'simple' )
+        licenseEl.attr( 'license-type', 'open-access' ).attr( 'xlink:href', node.license )
       }
       if (node.licenseText) {
         licenseEl.append(

@@ -219,7 +219,8 @@ function _exportSubjects (jats, doc) {
     }
     groupEl.append(
       subjects.map(subject => {
-        return $$('subject').attr({ 'content-type': subject.category }).text(subject.name)
+//       return $$('subject').attr({ 'content-type': subject.category }).text(subject.name)
+        return $$('subject').text(subject.name)
       })
     )
     articleCategories.append(groupEl)

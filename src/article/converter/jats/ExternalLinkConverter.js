@@ -13,6 +13,7 @@ export default class ExternalLinkConverter {
     }
   }
   export (node, el) {
+    el.removeAttribute('id')
     if (node.linkType) {
       el.setAttribute('ext-link-type', node.linkType)
     }

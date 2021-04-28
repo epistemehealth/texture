@@ -96,8 +96,8 @@ export const ARTICLE_TYPES = [
     name: 'Addendum'
   },
   {
-    id: 'editorial',
-    name: 'Editorial, opinion, general commentary'
+    id: 'professional-perspectives',
+    name: 'Professional Perspectives'
   },
   {
     id: 'correction',
@@ -166,6 +166,7 @@ export const EMPTY_JATS = `<?xml version="1.0" encoding="UTF-8"?>
       <journal-id journal-id-type="doi">10.35430/nab</journal-id>
       <journal-title-group>
         <journal-title>Neuroanatomy and Behaviour</journal-title>
+	<abbrev-journal-title abbrev-type="nlm-ta">Neuroanat Behav</abbrev-journal-title>
         <abbrev-journal-title abbrev-type="publisher">NAB</abbrev-journal-title>
       </journal-title-group>
       <issn publication-format="electronic">2652-1768</issn>
